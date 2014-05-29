@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IQ.Platform.Framework.WebApi.Model</name>
+    </assembly>
+    <members>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.HypermediaResource">
+            <summary>
+            Represents a resource that contains hypermedia links to other resources.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.ILinkable">
+            <summary>
+            Represents object that contains hypermedia links
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.IAccessControlList">
+            <summary>
+            Represents object that contains resource metadata
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Model.Hypermedia.HypermediaResource.GetDynamicLinks">
+            <summary>
+            Returns dynamic links for this resource that need to be generated at runtime.
+            </summary>
+            <remarks>
+            This method can be overridden in a derived class to provide additional links that require runtime data to generate.
+            </remarks>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.CommonLinkRelations">
+            <summary>
+            Standard link relation types, see http://www.iana.org/assignments/link-relations/link-relations.xml
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.IAccessControl">
+            <summary>
+            Resource MetatData
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.EmbeddedResource">
+            <summary>
+            Represents resource or collection of resources that can be embedded in another (parent) resource.
+            Used in implementation of oData's $expand feature and HAL's embedded resource feature.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.ILink">
+            <summary>
+            Hypermedia link.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.LinkableExtensions">
+            <summary>
+            Extension methods for <see cref="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.HypermediaResource"/> type.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Model.Hypermedia.LinkableExtensions.GetRelationUri(IQ.Platform.Framework.WebApi.Model.Hypermedia.ILinkable,System.String,System.Uri)">
+            <summary>
+            Finds and creates absolute Uri to a resource represented by given relation.
+            The method is useful in the Api client implementation.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.NullState">
+            <summary>
+            The hypermedia resource has no state
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Model.Hypermedia.NullState.Value">
+            <summary>
+            No state
+            </summary>
+        </member>
+    </members>
+</doc>

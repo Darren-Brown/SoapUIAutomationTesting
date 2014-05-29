@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HypemediaWebApi2012.Model</name>
+    </assembly>
+    <members>
+        <member name="T:HypemediaWebApi2012.Model.LinkRelations">
+            <summary>
+            iQmetrix link relation names
+            </summary>
+        </member>
+        <member name="F:HypemediaWebApi2012.Model.LinkRelations.TemplateResource">
+            <summary>
+            link relation to describe the Identity resource.
+            </summary>
+        </member>
+        <member name="T:HypemediaWebApi2012.Model.TemplateResource">
+            <summary>
+            A Template Resource, used as a placeholder. To be removed after real-world API resources have been added.
+            </summary>
+        </member>
+        <member name="P:HypemediaWebApi2012.Model.TemplateResource.Id">
+            <summary>
+            Unique Identifier for the TemplateResource
+            </summary>
+        </member>
+        <member name="P:HypemediaWebApi2012.Model.TemplateResource.Name">
+            <summary>
+            Name for the TemplateResource
+            </summary>
+        </member>
+        <member name="P:HypemediaWebApi2012.Model.TemplateResource.Description">
+            <summary>
+            Description for the TemplateResource
+            </summary>
+        </member>
+    </members>
+</doc>

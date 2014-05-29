@@ -1,0 +1,1145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IQ.Platform.Framework.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Diagnostic.PingResourceToSerializerSupportedObjectMapper">
+            <summary>
+            Converts Ping resource object exposed by the API framework backend to an object that is easier serializable by a media type formatter.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Handlers.CorsMessageHandler">
+            <summary>
+            A request hander that adds CORS standard support. See http://www.w3.org/TR/cors/ for more information.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IEntryPointRequestHandler">
+            <summary>
+            Just a marker for entry point request handler for now
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.EntryPointControllerActivator">
+            <summary>
+            Custom controllers creation
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.EntryPointControllerSelector">
+            <summary>
+            Provides the <see cref="T:System.Web.Http.Controllers.HttpControllerDescriptor"/> for the API entry point.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.GenericApiControllerActivator">
+            <summary>
+            Generic controller activation
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.GenericApiControllerSelector">
+            <summary>
+            Implementation of controller selector that resolves GenericApiController
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Diagnostic.PingMessageHandler">
+            <summary>
+            Handles GET requests to "/Ping" endpoint and returns information provided using <see cref="T:IQ.Platform.Framework.WebApi.Diagnostic.PingResource"/>
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Diagnostic.IPingMessageHandler">
+            <summary>
+            Helps in registering/resolving a message handler for <see cref="T:IQ.Platform.Framework.WebApi.Diagnostic.PingResource"/>.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.HttpResponseMessageCreator">
+            <summary>
+            Factory that creates ASP.NET <see cref="T:System.Net.Http.HttpResponseMessage"/> object based on platform independent <see cref="T:IQ.Platform.Framework.WebApi.IResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.AspNet.HttpResponseMessageCreator.CreateResponse``1(IQ.Platform.Framework.WebApi.IResponseMessage)">
+            <summary>
+            Creates HttpResponseMessage object based on provided IQ response object.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.DefaultHttpResponseMessageCreator">
+            <summary>
+            Default implementation of a factory that creates ASP.NET <see cref="T:System.Net.Http.HttpResponseMessage"/> object based on platform independent <see cref="T:IQ.Platform.Framework.WebApi.IResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.IPerHttpRequestInstanceReleaser">
+            <summary>
+            Releases registered instances after HTTP request is finished.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.PerHttpRequestInstanceReleaser">
+            <summary>
+            Releases registered instances after HTTP request is finished. Uses <see cref="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.IApiContainer"/> for releasing.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Diagnostic.HypermediaFrameworkPingResourceFactory">
+            <summary>
+            Decorates <see cref="T:IQ.Platform.Framework.WebApi.Diagnostic.ICreatePingResource"/> factory defined in Web API implementation with additional data for the API framework.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Diagnostic.ICreatePingResource">
+            <summary>
+            A factory for <see cref="T:IQ.Platform.Framework.WebApi.Diagnostic.PingResource"/>.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Diagnostic.NullPingFactory">
+            <summary>
+            Default implementation of <see cref="T:IQ.Platform.Framework.WebApi.Diagnostic.ICreatePingResource"/> factory.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Diagnostic.PingResource">
+            <summary>
+            Carries basic information about an API version etc.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Diagnostic.PingRepresentation">
+            <summary>
+            A POCO used to serialize ping response data
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.InboundResources.InboundResource`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResource"></typeparam>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Common.Collections.ObservableCollectionExtensions.ObservableFromCollectionChangedEvent``1(IQ.Platform.Framework.Common.Collections.IObservableCollection{``0})">
+            <summary>
+            Converts the IObservableCollection.CollectionChanged event to an IObservable sequence.
+            </summary>
+            <typeparam name="TItem">The type of item in the collection.</typeparam>
+            <param name="collection">The collection containing the event to convert.</param>
+            <returns>An observable sequence for the IObservableCollection.CollectionChanged event.</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Common.Collections.ObservableCollectionExtensions.ExecuteWhenItemIsAdded``1(IQ.Platform.Framework.Common.Collections.IObservableCollection{``0},System.Action{``0})">
+            <summary>
+            Sets up the IObservableCollection as an observable sequence then executes the passed in Action delegate when a single item is added.
+            </summary>
+            <typeparam name="TItem">The type of item in the collection.</typeparam>
+            <param name="collection">The collection to listen for add events on.</param>
+            <param name="itemAddedCallback">The delegate to callback when an item is added.</param>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Common.EnumerableOfIdentifiableTypeExtensions">
+            <summary>
+            Extension methods for type IEnumerable of 'TItem' where TItem is IIdentifiable of 'TKey'.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Common.EnumerableOfIdentifiableTypeExtensions.SingleOrDefaultByKeyAsOption``2(System.Collections.Generic.IEnumerable{``0},``1)">
+            <summary>
+            Searches the passed in enumerable collection for a single item with an Id equal to the passed in key.
+            
+            If a match is found then an Option of 'TItem' instance is returned with that match.
+            Otherwise an Option of 'TItem' whose HasValue property is false is returned.
+            </summary>
+            <typeparam name="TItem">The type of the items in the enumerable collection.</typeparam>
+            <typeparam name="TKey">The type of the identifiable key for the TItem type.</typeparam>
+            <param name="source">The source enumerable collection.</param>
+            <param name="key">The key to search by.</param>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Common.EnumerableOfIdentifiableTypeExtensions.EnsureSingleMatchByKey``2(System.Collections.Generic.IEnumerable{``0},``1,System.Func{System.Exception})">
+            <summary>
+            Searches the passed in enumerable collection for a single item with an Id equal to the passed in key.
+            
+            If a match is found then the match is returned.
+            Otherwise an exception is created by executing the noMatchException delegate and that exception is thrown.
+            </summary>
+            <typeparam name="TItem">The type of the items in the enumerable collection.</typeparam>
+            <typeparam name="TKey">The type of the identifiable key for the TItem type.</typeparam>
+            <param name="source">The source enumerable collection.</param>
+            <param name="key">The key to search by.</param>
+            <param name="noMatchException">A delegate that provides the exception to throw if no match is found for the passed in key.</param>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Diagnostic.SimpleTraceWriter">
+            <summary>
+            Class creates tracing message based on data provided by <see cref="T:System.Web.Http.Tracing.ITraceManager"/> and send it to given <see cref="T:IQ.Platform.Framework.WebApi.AspNet.Diagnostic.ITraceSource"/>.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Diagnostic.WebApiTraceSource">
+            <summary>
+            Traces given message to standard diagnostic trace source (<see cref="T:System.Diagnostics.TraceSource"/>).
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.EnumerableKvpExtensions.GetStringValueOrNull(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
+            <summary>
+            Gets the value of a <see cref="T:System.Collections.Generic.KeyValuePair`2"/> object from the collection based on key name
+            </summary>
+            <param name="dictionary">Collection of Key-Value Pairs</param>
+            <param name="keyName">Name of the key</param>
+            <returns>The value from the desired Key-Value pair if present; null otherwise</returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.CRUDFragmentsAreNotImplemented`2">
+            <summary>
+            The default implementation for each CRUD fragment that is meant to throw a NotImplementedException for each method.
+            </summary>
+            <typeparam name="TResource">Resource type.</typeparam>
+            <typeparam name="TKey">Resource's identifier type.</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.DelegatingApiApplicationService`2">
+            <summary>
+            A facade service that delegates each CRUD method to a CRUD fragment.
+            </summary>
+            <typeparam name="TResource">Resource type.</typeparam>
+            <typeparam name="TKey">Resource's identifier type.</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IApiApplicationService`2">
+            <summary>
+            Represents a service that implements all CRUD operations on the given resource.
+            </summary>
+            <typeparam name="TResource">Resource type.</typeparam>
+            <typeparam name="TKey">Resource's identifier type.</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IResourceLinksSource`1">
+            <summary>
+            Represents a source of links
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.EntryPointResourceLinksSource">
+            <summary>
+            Provides links to resources that have entry point relation defined in its spec
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Errors.ApiErrors">
+            <summary>
+            Groups predefined HTTP errors with helpful error messages.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Errors.ApiError">
+            <summary>
+            Represents HTTP error with status code and error message.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IParameterizedResourceOperation">
+            <summary>
+            Marks a resource spec's operation as parameterized
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ParameterizedResourceDeleteOperationBase`2.op_Implicit(IQ.Platform.Framework.WebApi.Hypermedia.ResourceDeleteOperation{`0,`1})~IQ.Platform.Framework.WebApi.Hypermedia.Specs.ParameterizedResourceDeleteOperationBase{`0,`1}">
+            <summary>
+            This cast operator is ...
+            </summary>
+            <param name="delete"></param>
+            <returns></returns>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ParameterizedResourceDeleteOperationBase`2.EnsuresResourceIsPresent">
+            <summary>
+            If parameter is set to true, when DELETE operation on a resource is processed by HypermediaProcessor,
+            underlying Get(id) API service operation is NOT called to make sure the resource exists, nor 404 Not found is returned. 
+            Implementer of the ApiAppService.Delete() operation has to handle the condition.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.IApiBaseAddressPathProvider">
+            <summary>
+            Provides relative path that is added to an absolute URI after base address part.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.NullApiBaseAddressPathProvider">
+            <summary>
+            Provides empty path.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.MediaTypeFormatters.AllPropertiesResolver">
+            <summary>
+            Currently the HypermediaResource abstract class needs to be decorated with DataContract attribute
+            for proper XML serialization.
+            By default, the JSON serializer ignores properties not decorated with DataMember attribute
+            when a resource class (or its base ) has DataContract attribute defined on it.
+            The class includes ignored properties in serialization back.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.MediaTypeFormatters.HalJsonFormatter.HalJsonParser">
+            <summary>
+            Parses HAL JSON
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.MediaTypeFormatters.HalJsonFormatter.HalJsonParser.Parse(System.Type,System.String)">
+            <summary>
+            Parses HAL JSON.
+            Because it doesn't really make sense to do anytihng with Hypermedia that is POSTed back to the server, we don't really
+            care about deserializing to a HypermediaResource, we just care about deserializing to a transport object so we only use
+            an object parser and not parsers to parse links or embedded resources.
+            If this changes, replace this parser with a new one that deals with the hypermedia.
+            </summary>
+            <param name="type">The type to deserialize to.</param>
+            <param name="content">String representation of HAL JSON request content body.</param>
+            <returns>A deserialized obejct of the requested type.</returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.MediaTypeFormatters.HalJsonFormatter.HalJsonObjectParser">
+            <summary>
+            Parses a transport object from a request body.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.MediaTypeFormatters.HalJsonFormatter.HalJsonObjectParser.GetObject(System.Type,System.String)">
+            <summary>
+            Parses a transport object from a HAL JSON request body.
+            </summary>
+            <param name="type">The type to deserialize to.</param>
+            <param name="content">String representation of HAL JSON request content body.</param>
+            <returns></returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.ResourceOrIdentifier`2">
+            <summary>
+            Contains a resource object or the resource identifier
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.ResourceOrIdentifier`2.HasResource">
+            <summary>
+            Returns true if the object contain the whole resource. Returns false if only id is available
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Security.AuthenticationMessageHandlerBase`1">
+            <summary>
+            A handler that passes an HttpRequestMessage to an IRequestAuthenticator and handles failed authentication exceptions.
+            
+            This class uses a <see cref="T:IQ.Platform.Framework.WebApi.Security.IRequestAuthenticator`1"/> to verify and retrieve authentication information (of TAuthData) 
+            then passes the authentication data to the next handler via the HttpRequestMessage's Properties dictionary.
+            </summary>
+            <typeparam name="TAuthData">The type of the authentication data object.</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IGenericApiController`3">
+            <summary>
+            Represents api controller that supports CRUD operations on a resource described by resource specification
+            </summary>
+            <typeparam name="TResource">resource type</typeparam>
+            <typeparam name="TState">resource state type </typeparam>
+            <typeparam name="TKey">resource key type</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.GenericApiController`3">
+            <summary>
+            Represents api controller that supports CRUD operations on a resource described by resource specification
+            </summary>
+            <typeparam name="TResource">resource type</typeparam>
+            <typeparam name="TState">resource state type </typeparam>
+            <typeparam name="TKey">resource key type</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Helpers.IConvertToAbsoluteUri">
+            <summary>
+            Knows how to convert to absolute Uri based on given relative URI or link template
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Helpers.AbsoluteUriResolver">
+            <summary>
+            Implements resolving provided URI or link template to absolute Uri.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Helpers.IPluralizationService">
+            <summary>
+            Provides an abstraction for getting a pluralized version of a string.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Helpers.IPluralizationService.Pluralize(System.String)">
+            <summary>
+            Gets a pluralized version of a word
+            </summary>
+            <param name="word">Singular-form word to be pluralized</param>
+            <returns>The pluralized form of the string</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Helpers.IPluralizationService.Singularize(System.String)">
+            <summary>
+            Gets a singularized version of a word
+            </summary>
+            <param name="word">Plural-form word to be singularized</param>
+            <returns></returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Helpers.IPluralizationService.IsPlural(System.String)">
+            <summary>
+            Checks if a word is a plural
+            </summary>
+            <param name="word">The word to check</param>
+            <returns><c>true</c> if the word is plural; <c>false</c> if it is singular</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Helpers.IPluralizationService.IsSingular(System.String)">
+            <summary>
+            Checks if a word is singular
+            </summary>
+            <param name="word">The word to check</param>
+            <returns><c>true</c> if the word is singular; <c>false</c> if it is plural</returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Helpers.PluralizationService">
+            <summary>
+            Implementation of IPluralizationService that uses the Entity Framework PluralizationService
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Helpers.PluralizationService.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.HttpMethodEx">
+            <summary>
+            Provides additional HttpMethod definitions. Used only in resource specification and hypermedia engine.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.HttpMethodEx.InitialPost">
+            <summary>
+            Initial post method that represents resource creation by sending POST to resource' uri without providing resource identifier.
+            The value is not to be used to send requests.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.HttpRequestMessageExtensions.GetQueryStringValue(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            Get the request's query string parameter value by name.
+            </summary>
+            <param name="request">a request message</param>
+            <param name="queryStringParamName">name of query string parameter</param>
+            <returns>query string value</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.HttpRequestMessageExtensions.GetQueryStringValue``1(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            Gets the request's query string parameter value by name and converts it to Option of the desired simple type
+            </summary>
+            <typeparam name="T">Simple type to convert to</typeparam>
+            <param name="request">Request message</param>
+            <param name="queryStringParamName">The name of the query parameter to retrieve</param>
+            <returns>Option of desired type representing the querystring value</returns>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Formatting.StandardMediaTypes.ApplicationJson">
+            <summary>
+            This is the recommended media type from the HAL spec, ref:"http://tools.ietf.org/html/draft-kelly-json-hal-03
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.DefaultLinkFactory">
+            <summary>
+            Creates a <see cref="T:IQ.Platform.Framework.WebApi.Model.Hypermedia.ResourceLink"/> object with required values based on provided settings from <see cref="T:IQ.Platform.Framework.WebApi.Infrastructure.HypermediaConfiguration"/>
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.ResourceLinkTemplateFactory">
+            <summary>
+            Creates <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.ResourceLinkTemplate`1"/> instance. Just a static factory for now.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.AspNetHttpContextApiBaseAddressProvider">
+            <summary>
+            Determines base path for the API application from HTTPContext provided by ASP.NET
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.IApiBaseAddressProvider">
+            <summary>
+            Provides base address for hypermedia link creation
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.IBindResourcePropertiesToTemplate">
+            <summary>
+            Binds parameters to given resource template
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.NullApiBaseAddressProvider">
+            <summary>
+            Provides base address for relative hypermedia link creation.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ApiServiceOperationsSource`2">
+            <summary>
+            Groups api service CRUD operations <see cref="T:IQ.Platform.Framework.WebApi.IApiApplicationService`2"/>
+            Used in resource's state specs ( derives of <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpec`3"/> ) to indicate that operation in given resource state is handled by the api service call.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.AspNetResponseStatusFactory">
+            <summary>
+            Creates a response message HTTP statuses for different HTTP status codes that contain the aspnet stack enumerator <see cref="T:System.Net.HttpStatusCode"/>.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResponseStatusFactory">
+            <summary>
+            Creates a response message HTTP statuses for different HTTP status codes.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.Specs.DictionaryWithUpdatingAddOperation`2.Add(`0,`1)">
+            <summary>
+            Adds new key,value pair if there is no existing entry with the same key. Otherwise replaces value.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.HttpMethodToErrorTypeAndStatusCodeMapMap.Defaults">
+            <summary>
+            Returns object containing default mappings.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IProvideUriTemplatesForResourceSpec">
+            <summary>
+            Reads URI templates given resource can be accessed from.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ReflectionBasedStaticUriTemplatesProvider">
+            <summary>
+            Using reflection, reads all URI templates defined as public static fields.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IResourceSpecification">
+            <summary>
+            Describes a resource specification. Used when we don't need a resource type information.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Routing.IResourceRoutingDescription">
+            <summary>
+            Resource description used by <see cref="T:IQ.Platform.Framework.WebApi.Routing.IHttpRoutesProvider"/> to generate http routes.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Routing.IResourceRoutingDescription.Name">
+            <summary>
+            The resource name
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Routing.IResourceRoutingDescription.UriTemplates">
+            <summary>
+            Uri templates required to access the resource
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Routing.IResourceRoutingDescription.EntrypointRelation">
+            <summary>
+            Relation name that describe the resource in entry point.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IResourceSpecification`3">
+            <summary>
+            Represents hypermedia resource's specification. 
+            Contains data used by hypermedia engine to process corresponding resource.
+            </summary>
+            <typeparam name="TResource">resource type the spec describes</typeparam>
+            <typeparam name="TState">type of state of a resource the spec describes</typeparam>
+            <typeparam name="TKey">type of a resource identifier the spec describes</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IResourceStateSpec`3">
+            <summary>
+            Represents a resource's state specification: hypermedia links, allowed operations, possible states etc.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Metadata.IResourceStateDescription">
+            <summary>
+            Used in documentation generation.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IResourceStateSpec`3.SuccessStatusCodes">
+            <summary>
+            Represents mapping between http method used and status code that should be returned when request is handled successfully for the resource state
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.NotAllowedOperationsSource`2">
+            <summary>
+            Groups operations that throw <see cref="T:System.Web.Http.HttpResponseException"/>  with the NotAllowed status code <see cref="T:System.Net.HttpStatusCode"/>.
+            Used in resource's state specs ( derives of <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpec`3"/> ) to indicate that operation in given resource state is not allowed.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceSpec`3">
+            <summary>
+            Represents hypermedia specification for multiple state resources. 
+            Contains data used by hypermedia engine to process corresponding resource.
+            </summary>
+            <typeparam name="TResource">resource type the spec describes</typeparam>
+            <typeparam name="TState">type of state of a resource the spec describes</typeparam>
+            <typeparam name="TKey">type of a resource identifier the spec describes</typeparam>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceSpec`3.Links">
+            <summary>
+            Contains links valid in every state of the resource
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceSpec`3.UriTemplates">
+            <summary>
+            All URI templates defined on the current resource
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceSpec`3.StateSpecs">
+            <summary>
+            Current resource's states specifications.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpec`3">
+            <summary>
+            Represents a resource's state specification: hypermedia links, allowed operations, etc.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpec`3.SuccessStatusCodes">
+            <summary>
+            Represents mapping between http method used and status code that should be returned when request is handled successfully for the resource state
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpec`3.OperationsDescriptor">
+            <summary>
+            Used in documentation generation to check what operations are allowed for current state of the resource
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpecExtensions">
+            <summary>
+            Defines extensions methods for <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IResourceStateSpec`3"/> interface.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpecExtensions.GetErrorStatusCode``3(IQ.Platform.Framework.WebApi.Hypermedia.Specs.IResourceStateSpec{``0,``1,``2},System.Net.Http.HttpMethod,System.Exception)">
+            <summary>
+            Gets a HTTP status code that the Api should throw if given exception is thrown while handling a request for given HTTP method.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.SingleStateResourceSpec`2">
+            <summary>
+            Represents hypermedia resource's specification for stateless resources. 
+            Contains data used by hypermedia engine to process corresponding resource.
+            </summary>
+            <typeparam name="TResource">resource type the spec describes</typeparam>
+            <typeparam name="TKey">type of a resource identifier the spec describes</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.StateSpecOperationsSource`2">
+            <summary>
+            Used by resource's state specs ( derives of <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResourceStateSpec`3"/> ). 
+            Stores operations that are supposed to be called in given resource state.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Metadata.IResourceStateOperationsDescriptor">
+            <summary>
+            Knows what verbs are allowed on the resource at the given resource state. Used in documentation generation.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Metadata.IResourceStateOperationsDescriptor.IsAllowed(System.Net.Http.HttpMethod)">
+            <summary>
+            Checks to see if given http method is allowed in defined resource's state operations
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.Specs.StateSpecOperationsSource`2.IsAllowed(System.Net.Http.HttpMethod)">
+            <summary>
+            Checks to see if given http method is allowed in defined resource's state operations
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.StateSpecOperationsSource`2.Defaults">
+            <summary>
+            Returns default operations. Only GET is allowed initially.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.StateSpecOperationsSource`2.Actions">
+            <summary>
+            Additional RPC-type actions on a resource.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.AspNet.Infrastructure.IApiContainer">
+            <summary>
+            The API dependency injection container .
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IResponseStatus">
+            <summary>
+            Represents a response message HTTP status codes with some additional information.
+            Used in resource specification.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IResponseStatus`1">
+            <summary>
+            Represents a response message HTTP status codes with some additional information.
+            Used in resource specification.
+            </summary>
+            <typeparam name="TCode">WebApi framework specific type that represents HTTP status code</typeparam>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.IResponseStatus`1.Code">
+            <summary>
+            The status code
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.ResponseStatus`1">
+            <summary>
+            Represents a response message HTTP status code without any additional information
+            </summary>
+            <typeparam name="TCode">WebApi framework specific type that represents HTTP status code</typeparam>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.ResponseStatus`1.Code">
+            <summary>
+            The status code
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.RedirectResponseStatusWithTemplatedLocation`2">
+            <summary>
+            3xx HTTP status code that carries the Location header information
+            </summary>
+            <typeparam name="TToResource"></typeparam>
+            <typeparam name="TCode">a WebApi framework specific type that represents HTTP status code</typeparam>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.RedirectResponseStatusWithTemplatedLocation`2.Location">
+            <summary>
+            The Location header value
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.RedirectResponseStatusWithStaticLocation`1">
+            <summary>
+            3xx HTTP status code that carries the Location header value
+            </summary>
+            <typeparam name="TCode">a WebApi framework specific type that represents HTTP status code</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.ISimpleMultiValuesRepresentationConverter">
+            <summary>
+            Converts stringly representation of many resource action arguments to required simple types.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.CommaSeparatedSimpleValuesRepresentationConverter">
+            <summary>
+            Converts stringly representation of many resource action arguments to required simple types.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.IResourceAction">
+            <summary>
+            Represents RPC style operation that is executed on a resource.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.IResourceActionHandler`2">
+            <summary>
+            Groups resource's RPC style action handlers.
+            </summary>
+            <typeparam name="TKey">type of resource key</typeparam>
+            <typeparam name="TResource">Resource contract type. 
+            The type is not used in the interface. It is only required to satisfy Winsor container service resolving process.</typeparam>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Rpc.IResourceActionHandler`2.Handle(`0,System.String,IQ.Platform.Framework.WebApi.IRequestContext)">
+            <summary>
+            Handles action with simple type arguments provided in Uri in form: /Resource(1)/Action(argument1, argument2).
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Rpc.IResourceActionHandler`2.HandleWithContent(`0,IQ.Platform.Framework.WebApi.IRequestContext)">
+            <summary>
+            Handles action with arguments provided in request content.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.ResourceActionHandler`2">
+            <summary>
+            Implementations of resource's RPC style action handlers.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Rpc.ResourceActionHandler`2.Handle(`0,System.String,IQ.Platform.Framework.WebApi.IRequestContext)">
+            <summary>
+            Handles action with simple type arguments provided in Uri in form: /Resource(1)/Action(argument1, argument2).
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Rpc.ResourceActionHandler`2.HandleWithContent(`0,IQ.Platform.Framework.WebApi.IRequestContext)">
+            <summary>
+            Handles action with arguments provided in request content.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.GenericControllerActionSelector">
+            <summary>
+            Decorates default HttpActionSelector with resource's actions handling .
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.GenericControllerActionInvoker">
+            <summary>
+            Decorates default HttpActionSelector with resource's actions handling. 
+            Used for debugging purposes only.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Infrastructure.HypermediaConfigurationExtensions.GetSpecFor``1(IQ.Platform.Framework.WebApi.Infrastructure.HypermediaConfiguration)">
+            <summary>
+            Finds resource specification object.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Metadata.IResourceLinkDescription">
+            <summary>
+            Used in documentation generation.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.ISelectLinkTemplatesToApply">
+            <summary>
+            Provides templates for links that should be added to resource representation by <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.IResourceLinkApplier"/>.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.IHttpMethodToResponseStatusMap">
+            <summary>
+            Represents mapping between http method used and status code that should be returned when request is handled successfully for the resource state
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.Specs.HttpMethodToStatusCodeMap">
+            <summary>
+            Used in resource's state specification. 
+            Represents mapping between http method used and response status code that should be returned when request is handled successfully.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.Specs.HttpMethodToStatusCodeMap.GetDefaults(IQ.Platform.Framework.WebApi.Hypermedia.Specs.ResponseStatusFactory)">
+            <summary>
+            Returns object containing default mappings.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.Specs.ErrorToStatusMap.Defaults">
+            <summary>
+            Returns object containing default mappings.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.HypermediaResourceCollection`1">
+            <summary>
+            Represents resources collection that contains hypermedia links.
+            </summary>
+            <typeparam name="TResource">resource type the collection contains</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.ILinksResolver">
+            <summary>
+            Resolves hypermedia links based on provided URI template and a resource object.
+            Used by <see cref="T:IQ.Platform.Framework.WebApi.Hypermedia.IResourceLinkApplier"/>.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.ILinksResolver.Resolve``1(IQ.Platform.Framework.WebApi.Hypermedia.ResourceLinkTemplate{``0},``0)">
+            <summary>
+            Resolves URI template's parameters by applying the template bindings to provided resource object.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.IResourceLinkApplier">
+            <summary>
+            Applies hypermedia links to the resource.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.DefaultResourceLinkApplier.MapToResourceLink(IQ.Platform.Framework.WebApi.Model.Hypermedia.ILink)">
+            <summary>
+            We have to use concrete ResourceLink collection in HypermediaResource for now, due to deserialization issue
+            and we want to use polymorphic ILink internally wherever possible.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.IHypermediaProcessor`3">
+            <summary>
+            When sending request to a resource, the hypermedia  processor checks to see if given HTTP request is valid for the current state of a resource,
+            delegates to corresponding CRUD operation implementation, then applies links defined in the resource spec and provides correct response HTTP status code.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.LinksResolver">
+            <summary>
+            Resolves hypermedia links based on provided URI template and a resource object.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.LinksResolver.Resolve``1(IQ.Platform.Framework.WebApi.Hypermedia.ResourceLinkTemplate{``0},``0)">
+            <summary>
+            Resolves URI template's parameters by applying the template bindings to provided resource object.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.ResourceUriTemplate">
+            <summary>
+            Resource URI template containing template parameters' type information.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.ResourceUriTemplate.Many">
+            <summary>
+            Returns new template instance that represents URI to a collection of resources or URI for creating a new resource. 
+            The last parameter is removed from current template Uri.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.HypermediaConfiguration">
+            <summary>
+            Class containing all configuration data additional to WebApi's HttpConfiguration object.
+            </summary>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Infrastructure.HypermediaConfiguration.PingResourceFactory">
+            <summary>
+            Sets a type of factory for creating custom <see cref="T:IQ.Platform.Framework.WebApi.Diagnostic.PingResource"/>Ping resource object.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Infrastructure.WebApiConfigurator">
+            <summary>
+            Configures the api application: reads resource specs based on provided types, generate routes and fills hypermedia configuration.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.RequestFilterValuePasser`2">
+            <summary>
+            A class that helps to compose different requested filter values. 
+            Used by request filter combinators.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.RequestFilterValuePasserNext`3">
+            <summary>
+            A class that helps to compose different requested filter values. 
+            Used by request filter combinators.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Querying.RequestFilterExtensions.GetEqualValueFor``2(IQ.Platform.Framework.WebApi.Querying.IRequestFilter{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Gets a value of the filter object's Equal operation that exists for a property selected by the property selector.
+            </summary>
+            <returns>An object containing the filter value.</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Querying.RequestFilterExtensions.IfEqualValue``2(IQ.Platform.Framework.WebApi.Querying.IRequestFilter{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Gets a value of the filter object's Equal operation that exists for a property selected by the property selector.
+            </summary>
+            <returns>The filter value wrapped by the objects used by request filter combinators</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Querying.RequestFilterExtensions.IfSubstringValue``1(IQ.Platform.Framework.WebApi.Querying.IRequestFilter{``0},System.Linq.Expressions.Expression{System.Func{``0,System.String}})">
+            <summary>
+            Gets a value of the filter object's Substring operation that exists for a property selected by the property selector.
+            </summary>
+            <returns>The filter value wrapped by the objects used by request filter combinators</returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.RequestFilterValuePasserExtensions">
+            <summary>
+            Request filter combinators.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.RequestFilterValuePasserNextExtensions">
+            <summary>
+            Request filter combinators.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IRequestContext">
+            <summary>
+            Passes request's information down to api services
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.RequestContext`1">
+            <summary>
+            Passes request's information down to api services
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.NullRequestFilter`1">
+            <summary>
+                Used when no filter is present.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Querying.IRequestFilter`1.TryGetValueFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},``0@)">
+            <summary>
+            Tries to get equality operator value of resource's property given by expression.
+            </summary>
+            <typeparam name="T">type of requested property</typeparam>
+            <param name="propertySelector">expression indicating property</param>
+            <param name="value">property value if the method succeeds.</param>
+            <returns></returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.FilterExpression">
+            <summary>
+            Stores information about expression read from oData $filter's AST
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Querying.ODataSimpleValuesRepresentationConverter">
+            <summary>
+            See: http://www.odata.org/documentation/overview#AbstractTypeSystem
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Reflection.IControllerTypeResolver">
+            <summary>
+            Represents operations that help figure out resource's controller type.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.IControllerTypeResolver.Resolve(System.String)">
+            <summary>
+            Finds hypermedia controller type based on resource name.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.IControllerTypeResolver.Resolve(System.Type,System.String)">
+            <summary>
+            Finds generic controller type based on resource name and generic controller's open type
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.IControllerTypeResolver.IsHypermediaController(System.Type)">
+            <summary>
+            Checks if the given type represents hypermedia controller
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Reflection.IResourceRelatedGenericTypesResolver">
+            <summary>
+            Represents common operations on types related to resources type as well as its key and state type.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.IResourceRelatedGenericTypesResolver.ResolveResourceTypeInfo(System.String)">
+            <summary>
+            Returns type description for given resource name
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.IResourceRelatedGenericTypesResolver.ResolveResourceTypeInfo(System.Type)">
+            <summary>
+            Returns type description for given resource type
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.IResourceRelatedGenericTypesResolver.ResolveResourceTypeInfoBySpec(System.Type)">
+            <summary>
+            Returns resource type description for given resource specification type
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Reflection.ResourceRelatedGenericTypesResolver">
+            <summary>
+            Implements common operations on types related to resources type as well as its key and state type.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.ResourceRelatedGenericTypesResolver.ResolveResourceTypeInfo(System.Type)">
+            <summary>
+            Returns type description for given resource type
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.ResourceRelatedGenericTypesResolver.ResolveResourceTypeInfo(System.String)">
+            <summary>
+            Returns type description for given resource name
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Reflection.ResourceRelatedGenericTypesResolver.ResolveResourceTypeInfoBySpec(System.Type)">
+            <summary>
+            Returns type description for given resource type
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.IRelatedResourceUriParametersSource.GetFor``2">
+            <summary>
+            Returns URI parameter value from the current request's URI that has been decorated in a resource specification with related resource type it refers to.
+            </summary>
+            <typeparam name="TRelatedResource">related resource type specified in a URI template in current resource's specification</typeparam>
+            <typeparam name="TRelatedResourceKey">type that result parameter value will be converted to</typeparam>
+            <returns>the option object with value of the parameter if match to related resource can be found; Option.None otherwise</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.IRelatedResourceUriParametersSource.GetAt``1(System.Int32)">
+            <summary>
+            Reads URI parameter value from the current request's URI by its position.
+            </summary>
+            <typeparam name="TValue">type the parameter value should be converted to</typeparam>
+            <param name="index">position of the parameter</param>
+            <returns>converted value at given position</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.IRelatedResourceUriParametersSource.GetByName``1(System.String)">
+            <summary>
+            Reads URI parameter value from the current request's URI by parameter name.
+            The method tries to convert the parameter value to a required type.
+            </summary>
+            <typeparam name="TValue">type the parameter value should be converted to</typeparam>
+            <param name="parameterName">parameter name</param>
+            <returns>returns <see cref="T:IQ.Platform.Framework.Common.Option`1"/> object containing converted parameter value or Option.None if value does not exist or cannot be converted to given type</returns>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.RequestContextExtensions.CreateResponse``1(IQ.Platform.Framework.WebApi.IRequestContext,``0,IQ.Platform.Framework.WebApi.IResponseStatus)">
+            <summary>
+            Factory method for <see cref="T:IQ.Platform.Framework.WebApi.ResponseMessage`1"/> class.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.RequestContextExtensions.CreateResponse``1(IQ.Platform.Framework.WebApi.IRequestContext,``0)">
+            <summary>
+            Factory method for <see cref="T:IQ.Platform.Framework.WebApi.ResponseMessage`1"/> class.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.RequestContextExtensions.EnsureRelatedResourceKeyIsPresent``2(IQ.Platform.Framework.WebApi.IRequestContext,System.String)">
+            <summary>
+            Ensures that a related resource of type TRelatedResource is available in the context's UriParameters.
+            
+            If it is available then the TRelatedResource's key value is returned.
+            If it is not available then an HttpResponseException is thrown with a status code of HttpStatusCode.BadRequest. 
+            </summary>
+            <typeparam name="TRelatedResource">The type of the desired related resource.</typeparam>
+            <typeparam name="TRelatedResourceKey">The type of the related resource's key.</typeparam>
+            <param name="context">The context used to obtain resource info.</param>
+            <param name="message">The error message for the HttpResponseException.</param>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.ResourceCreationResult`2">
+            <summary>
+            Class representing the result of ApiApplicationService.Create() call.
+            </summary>
+            <remarks>
+            The class is used to return a key or whole resource depending on particular case:
+            - some of the RQ4 creation operations return whole created object, so it can be mapped and sent back,
+            - some operations return just id of created entity and we should call apiservice.Get() to send created resource back.
+            </remarks>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.ResourceEnumerableExtensions.FilterByRelatedResourceUriParameter``3(System.Collections.Generic.IEnumerable{``0},IQ.Platform.Framework.WebApi.IRequestContext,System.Func{``0,``2})">
+            <summary>
+            Filters the resources by related resource key if the key exists in Uri parameters.
+            </summary>
+            <typeparam name="TResource">type of sequence resource</typeparam>
+            <typeparam name="TRelatedResource">type of related resource</typeparam>
+            <typeparam name="TRelatedResourceKey">type of key of related resource</typeparam>
+            <param name="resources">sequence of resource</param>
+            <param name="context">current request context</param>
+            <param name="relatedKeySelector">selects a key property which value is compared to Uri parameter of related resource</param>
+            <returns>filtered sequence if Uri parameter for given related resource type was found. Otherwise, the input sequence.</returns>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.IResponseMessage">
+            <summary>
+            Wraps response's resource and status code 
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.ResponseMessageExtensions.ToHttpResponse``1(IQ.Platform.Framework.WebApi.IResponseMessage,System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Creates ASP.NET Web API response message from custom response message.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.ResponseMessageExtensions.GetContent``1(IQ.Platform.Framework.WebApi.IResponseMessage)">
+            <summary>
+            Get resource from the response message
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Routing.ApiRouteVariables">
+            <summary>
+            The class groups http route variable names used in the Api.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Routing.HttpRouteDataExtensions.GetControllerName(System.Web.Http.Routing.IHttpRouteData)">
+            <summary>
+            Reads controller name.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Routing.IHttpRoutesProvider">
+            <summary>
+            Generates Http routes based on resource specifications
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.StaticResourceLinkTemplate`1">
+            <summary>
+            Encapsulates link template and its Uri parameters bindings for a given resource type
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.ResourceLinkTemplate`1">
+            <summary>
+            Encapsulates link template and its Uri parameters bindings for a given resource type
+            </summary>
+            <typeparam name="TResource"></typeparam>
+        </member>
+        <member name="P:IQ.Platform.Framework.WebApi.Hypermedia.ResourceLinkTemplate`1.Condition">
+            <summary>
+            Determines if the link is visible.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Hypermedia.HypermediaProcessor`3">
+            <summary>
+            When sending request to a resource, the hypermedia  processor checks to see if given HTTP request is valid for the current state of a resource,
+            delegates to corresponding CRUD operation implementation, then applies links defined in the resource spec and provides correct response HTTP status code.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Hypermedia.HypermediaProcessor`3.ProcessResourceReplacement(System.Net.Http.HttpMethod,`2,`0,IQ.Platform.Framework.WebApi.IRequestContext)">
+            <summary>
+            PUT and POST on a single resource is handled the same way.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Routing.ResourceSpecRoutesProvider">
+            <summary>
+            Generates Http routes based on resource specifications
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Routing.ResourceSpecWithActionsRoutesProvider">
+            <summary>
+            Generates Http routes based on resource specifications. Extends <see cref="T:IQ.Platform.Framework.WebApi.Routing.ResourceSpecRoutesProvider"/> with action templates.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.IResourceActionResult">
+            <summary>
+            Stores value of an action result. Knows how to create response message for the result.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.ResourceActionVoidResult">
+            <summary>
+            Null object.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.ResourceActionResult`1">
+            <summary>
+            Represents action result containing return value
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.IResourceActionResultFactory">
+            <summary>
+            Creates <see cref="T:IQ.Platform.Framework.WebApi.Rpc.IResourceActionResult"/> object based on provided action.
+            </summary>
+        </member>
+        <member name="M:IQ.Platform.Framework.WebApi.Rpc.IResourceActionResultFactory.Create(System.Object,IQ.Platform.Framework.WebApi.Rpc.IResourceAction)">
+            <summary>
+            Creates instance of action result.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Rpc.ResourceActionResultFactory">
+            <summary>
+            Creates <see cref="T:IQ.Platform.Framework.WebApi.Rpc.IResourceActionResult"/> object based on provided action.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Security.CompositeRequestAuthenticator`1">
+            <summary>
+            Calls multiple IRequestAuthenticator implementations until one returns valid access information.
+            </summary>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Security.IRequestAuthenticator`1">
+            <summary>
+            Verifies that a request is authenticated and returns authentication/authorization data.
+            </summary>
+            <typeparam name="TAuthData">A type that contains authentication/authorization data</typeparam>
+        </member>
+        <member name="T:IQ.Platform.Framework.WebApi.Security.ICreateExpiredAuthenticationResponse">
+            <summary>
+            Creates a response message that represents an error caused by expired authentication token.
+            </summary>
+        </member>
+    </members>
+</doc>

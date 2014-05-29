@@ -1,0 +1,8 @@
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\bin\Debug\HypemediaWebApi2012.Model.XML
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\bin\Debug\HypemediaWebApi2012.Model.dll
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\bin\Debug\HypemediaWebApi2012.Model.pdb
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\bin\Debug\IQ.Platform.Framework.WebApi.Model.dll
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\bin\Debug\IQ.Platform.Framework.WebApi.Model.xml
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\obj\Debug\HypemediaWebApi2012.Model.csprojResolveAssemblyReference.cache
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\obj\Debug\HypemediaWebApi2012.Model.dll
+c:\users\darren.brown\documents\visual studio 2012\Projects\HypemediaWebApi2012\HypemediaWebApi2012\HypemediaWebApi2012.Model\obj\Debug\HypemediaWebApi2012.Model.pdb
